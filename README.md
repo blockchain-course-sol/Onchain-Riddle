@@ -1,66 +1,61 @@
-## Foundry
+# Examen 101 - Blockchain Development
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Introduction
 
-Foundry consists of:
+This examination will evaluate the blockchain development skills learned during the course. The goal is to understand the OnchainRiddle smart contract provided, integrate it into a Decentralized Application (DApp), and interact with it.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Getting Started
 
-## Documentation
+Follow these steps to complete the examination:
 
-https://book.getfoundry.sh/
+### 1. Smart Contract Review
 
-## Usage
+First, read and understand the [OnchainRiddle smart contract](src/OnchainRiddle.sol) to comprehend its functionality and structure.
 
-### Build
+### 2. Deploy the Smart Contract
 
-```shell
-$ forge build
-```
+- Deploy the smart contract on your desired test network
+- Find and use a faucet to obtain the necessary fees for deployment
+- You can use either:
+  - This repository directly with Foundry
+  - [Remix Ethereum IDE](https://remix.ethereum.org/) as demonstrated in class
+- To deploy on testnet via Remix:
+  - Navigate to the Deploy section
+  - Select Environment → Browser Extension → Injected Provider - MetaMask
 
-### Test
+### 3. Create the DApp Interface
 
-```shell
-$ forge test
-```
+Once deployed, create a frontend interface for the smart contract. Review the TD examples at [blockchain-course-sol repositories](https://github.com/orgs/blockchain-course-sol/repositories) for reference.
 
-### Format
+### Non-Exhaustive Features
 
-```shell
-$ forge fmt
-```
+Feel free to integrate the smart contract into your DApp as you want. Below are some non-exhaustive instructions:
 
-### Gas Snapshots
+- **Wallet Connection**: Create connect/disconnect buttons with balance and network display
+- **On-chain Data Display**: Display on-chain data using either:
+  - Indexer (e.g., Subsquid)
+  - View functions from the smart contract
+- **User Interactions**: All users should be able to:
+  - View the current riddle
+  - Access the history of riddles
+  - Submit answers to riddles
 
-```shell
-$ forge snapshot
-```
+### Advanced Features
 
-### Anvil
+- Implement a backend service that automatically triggers `setRiddle` when the current riddle is solved
+- Deploy your application using Vercel, Railway, or any other free-tier hosting platform
 
-```shell
-$ anvil
-```
+## Deliverables
 
-### Deploy
+1. **Repository**: Submit a link to your GitHub repository containing the complete project
+2. **Demo**: Provide a screen recording demonstrating your deployed or local implementation
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+## Evaluation Criteria
 
-### Cast
+Your work will be evaluated based on:
 
-```shell
-$ cast <subcommand>
-```
+- Smart contract deployment success
+- Frontend functionality and user experience
+- Integration quality between smart contract and DApp
 
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Good luck!
